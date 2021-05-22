@@ -2,6 +2,7 @@ __pycache__/
 .vscode/
 venv/
 db.sqlite3
+secret_key.txt
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
