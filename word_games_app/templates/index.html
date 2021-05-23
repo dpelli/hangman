@@ -6,8 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reg/Login</title>
 </head>
-<body>
+<!-- <body>
     <h1>Reg/Login</h1>
+    <a class="btn btn-success" href="/word_jumble">Word Jumble</a>
+</body> -->
+<!-- </html> -->
+
+<body>
+    <h1>Welcome! Sign in to begin playing our word games!</h1>
+    <div id="registrationsection">
+        <div id="registerbanner">
+            <h4>Register</h4>
+        </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="register" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email_address">Email</label>
+                <input type="email" name="email_address" id="email_address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm pw</label>
+                <input type="password" name="confirm_password" id="password" class="form-control" required>
+            </div>
+            <input type="Submit" name="Register" id="register" value="Register">
+        </form>
+    </div>
+    <div id="loginsection">
+        <div id="loginbanner">
+            <h4>Login</h4>
+        </div>
+        <form action="login" method='POST'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="email_address">Email</label>
+                <input type="email" name="email_address" id="email_address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <div>
+                <input type="Submit" name="Login" id="login" value="Login">
+            </div>
+        </form>
+    </div>
+    <br>
     <a class="btn btn-success" href="/word_jumble">Word Jumble</a>
 </body>
 </html>
