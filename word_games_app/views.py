@@ -103,4 +103,4 @@ def dashboard(request):
     return render(request, 'dashboard.html', context)
 
 def hangman(request):
-    return redirect("/hangman")
+    return render(request, 'hangman.html')
