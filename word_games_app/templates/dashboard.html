@@ -11,16 +11,24 @@
 </head>
 <body>
     <div class="header">
-        <h2>Welcome back, {{user_id.first_name}}!</h1>
-        <h2>Your Stats: {{user_id.current_score}</h2>
+        <h1>Welcome back, {{user_id.first_name}}!</h1>
         <a href="/scoreboard">Scoreboard</a> | <a href="/logout">Logout</a>
+        <h4>Your Stats: {{user_id.current_score}</h4>
     </div>
     <div>
+        <h2>Hangman</h2>
         <p>Level:</p>
         <p>Difficulty:</p>
         <p>Theme:</p>
-        <a class="btn btn-success" href="/hangman">Start a new game: Hangman</a>
-        <a class="btn btn-success" href="/word_jumble">Start a new game: Word Jumble</a>
+        <a class="btn btn-success" href="/hangman">Start New Game</a>
+        <a class="btn btn-success" href="/word_jumble">Start Start New Game</a>
+    </div>
+    <div>
+        <h2>Word Jumble</h2>
+        <p>Level:</p>
+        <p>Difficulty:</p>
+        <p>Theme:</p>
+        <a class="btn btn-success" href="/word_jumble">Start Start New Game</a>
     </div>
 </body>
 </html>
