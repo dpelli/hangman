@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <title>Welcome to Word Games!</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Welcome back, {{user_id.first_name}}!</h1>
+        <h2>Your Stats: {{user_id.current_score}</h2>
+        <a href="/logout">Logout</a>
+    </div>
+    <div>
+        <p>Level:</p>
+        <p>Difficulty:</p>
+        <p>Theme:</p>
+        <a class="btn btn-success" href="/hangman">Start a new game: Hangman</a>
+        <a class="btn btn-success" href="/word_jumble">Start a new game: Word Jumble</a>
+    </div>
+</body>
+</html>
