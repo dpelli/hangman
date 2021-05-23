@@ -104,3 +104,6 @@ def dashboard(request):
 
 def hangman(request):
     return render(request, 'hangman.html')
+
+def scoreboard(request):
+    return render(request, 'scoreboard.html')

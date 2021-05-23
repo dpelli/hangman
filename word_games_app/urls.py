@@ -12,4 +12,5 @@ urlpatterns = [
     path('login', views.login),
     path('dashboard', views.dashboard),
     path('hangman', views.hangman),
+    path('scoreboard', views.scoreboard),
 ]
