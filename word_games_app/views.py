@@ -96,8 +96,8 @@ def dashboard(request):
     # my_jobs = Job.objects.get(id=request.session['job_id'])
     context = {
         # "all_jobs": Job.objects.all(),
-        # 'user_id': user_id,
-        # 'users_id': User.objects.all(),
+        'user_id': user_id,
+        'users_id': User.objects.all(),
         # "my_jobs": Job.objects.get(id=job_id)
     }
     return render(request, 'dashboard.html', context)
