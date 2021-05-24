@@ -48,9 +48,14 @@ def start(request):
     rword(request)
     return redirect("/word_jumble")
 
-def reset(request):
-    request.session.flush()
+def reset_jumble(request):
+    request.session['answer'] = ""
+    request.session['jumbled_word'] = " "
     return redirect("/word_jumble")
+
+def reset_hang(request):
+    # request.session.flush()
+    return redirect("/hangman")
 
 def logout(request):
     request.session.flush()
