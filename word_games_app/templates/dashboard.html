@@ -12,15 +12,15 @@
 <body>
     <div class="header">
         <h1>Welcome back, {{user_id.first_name}}!</h1>
-        <a href="/scoreboard">Scoreboard</a> | <a href="/logout">Logout</a>
-        <h4>Your Stats: {{user_id.current_score}</h4>
+        <a href="/scoreboard" class="btn btn-primary">Scoreboard</a> | <a href="/logout" class="btn btn-primary">Logout</a>
+        <h4>Your Stats: {{user_id.curre nt_score}</h4>
     </div>
     <div>
         <h2>Hangman</h2>
         <p>Level:</p>
         <p>Difficulty:</p>
         <p>Theme:</p>
-        <a class="btn btn-success" href="/hangman">Start New Game</a>
+        <a class="btn btn-success" href="/hangman">Play Hangman!</a>
         <form action="/hangman" method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -28,11 +28,11 @@
                 <input type="text" name="level" id="level" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="difficulty">Difficulty</label>
+                <label for="difficulty">Difficulty:</label>
                 <input type="text" name="difficulty" id="difficulty" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="theme">Theme</label>
+                <label for="theme">Theme:</label>
                 <input type="text" name="theme" id="theme" class="form-control" required>
             </div>
             <input type="Submit" name="" id="new_game" value="Start New Game">
@@ -43,7 +43,7 @@
         <p>Level:</p>
         <p>Difficulty:</p>
         <p>Theme:</p>
-        <a class="btn btn-success" href="/word_jumble">Start New Game</a>
+        <a class="btn btn-success" href="/word_jumble">Play Word Jumble!</a>
         <form action="/word_jumble" method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -51,15 +51,24 @@
                 <input type="text" name="level" id="level" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="difficulty">Difficulty</label>
+                <label for="difficulty">Difficulty:</label>
                 <input type="text" name="difficulty" id="difficulty" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="theme">Theme</label>
+                <label for="theme">Theme:</label>
                 <input type="text" name="theme" id="theme" class="form-control" required>
             </div>
             <input type="Submit" name="" id="new_game" value="Start New Game">
-        </form>
+        </form><br><br><br>
     </div>
+    <style type="text/css">
+        body {
+            transition: .2s background;
+            background: linear-gradient(135deg, rgb(141, 141, 153) 0%, rgb(155, 66, 83) 100%);
+            /* color: white; */
+            height: 100%;
+        }
+    </style>
+
 </body>
 </html>
