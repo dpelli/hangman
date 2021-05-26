@@ -24,21 +24,54 @@ def index(request):
     return render(request, 'index.html')
 
 def rword(request):
-    all_words = Word.objects.filter(length=5)
+    level = request.session['level']
+    # difficulty = request.session['difficulty']
+    # theme = request.session['theme']
+
+    if (level == "1"):
+        all_words = Word.objects.filter(length=4)
+    elif (level == "2"):
+        all_words = Word.objects.filter(length=5)
+    else:
+        all_words = Word.objects.filter(length=6)
+
     word = random.choice(all_words)
     print(word.name)
     request.session['word'] = word.name
     jumble = random.sample(word.name, len(word.name)) #return a list of letters
     jumbled_word = "".join(jumble)
     request.session['jumbled_word'] = jumbled_word
+
     return request.session['jumbled_word']
 
+def start_jumble(request):
+    request.session['level'] = request.POST['level']
+    request.session['difficulty'] = request.POST['difficulty']
+    request.session['theme'] = request.POST['theme']
+        # difficulty = request.session['difficulty']
+    # theme = request.session['theme']
+    print(request.session['level'])
+    if (request.session['level'] == "1"):
+        all_words = Word.objects.filter(length=4)
+    elif (request.session['level'] == "2"):
+        all_words = Word.objects.filter(length=5)
+    else:
+        all_words = Word.objects.filter(length=6)
+
+    word = random.choice(all_words)
+    print(word.name)
+    request.session['word'] = word.name
+    jumble = random.sample(word.name, len(word.name)) #return a list of letters
+    jumbled_word = "".join(jumble)
+    request.session['jumbled_word'] = jumbled_word
+    
+    return redirect("/word_jumble")
+    
 def word_jumble(request):
     if 'answer' not in request.session:
         request.session['answer'] = ""
-    # if 'jumbled_word' not in request.session:
-    #     request.session['jumbled_word'] = ""
-    rword(request)
+    # rword(request)
+    print(request.session['level'])
     context = {
         'jumbled_word': request.session['jumbled_word'],
         'answer': request.session['answer']
@@ -53,13 +86,16 @@ def guess(request):
         request.session['answer'] = "Correct!"
     return redirect("/word_jumble")
 
-def start(request):
+def new_word(request):
     rword(request)
     return redirect("/word_jumble")
 
 def reset_jumble(request):
     request.session['answer'] = ""
     request.session['jumbled_word'] = ""
+    request.session['level'] = ""
+    print(request.session['level'])
+    print("hello")
     return redirect("/dashboard")
 
 def reset_hang(request):
