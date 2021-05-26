@@ -1,20 +1,21 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-# from english_words import english_words_lower_alpha_set
+from english_words import english_words_lower_alpha_set
 # added ^ to see if I can pull from a larger dictionary 
 import random
 import bcrypt
+from random_word import RandomWords
 
 from .models import *
 
 
-words = ["python", 
-    "jumble", 
-    "easy", 
-    "difficult", 
-    "answer", 
-    "xylophone"
-]
+# words = ["python", 
+#     "jumble", 
+#     "easy", 
+#     "difficult", 
+#     "answer", 
+#     "xylophone"
+# ]
 
 # words = [ "english_words"
 # ]
@@ -23,12 +24,14 @@ def index(request):
     return render(request, 'index.html')
 
 def rword(request):
-    word = random.choice(words)
-    request.session['word'] = word
-    jumble = random.sample(word, len(word)) #return a list of letters
+    all_words = Word.objects.filter(length=5)
+    word = random.choice(all_words)
+    print(word.name)
+    request.session['word'] = word.name
+    jumble = random.sample(word.name, len(word.name)) #return a list of letters
     jumbled_word = "".join(jumble)
     request.session['jumbled_word'] = jumbled_word
-    return redirect("/word_jumble")
+    return request.session['jumbled_word']
 
 def word_jumble(request):
     if 'answer' not in request.session:
@@ -56,7 +59,7 @@ def start(request):
 def reset_jumble(request):
     request.session['answer'] = ""
     request.session['jumbled_word'] = " "
-    return redirect("/word_jumble")
+    return redirect("/dashboard")
 
 def reset_hang(request):
     # request.session.flush()
