@@ -1,27 +1,25 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 10px 5px;
 }
-h1{
+h1, h2, h3{
     text-align: center;
-}
-h2{
-    text-align: center;
-    /* border-style: solid; */
 }
 #input{
     display: inline;
+    justify-self: center;
 }
-/* body {
-    transition: .2s background;
-    background: linear-gradient(135deg, rgb(141, 141, 153) 0%, rgb(155, 66, 83) 100%);
-    color: white;
-    height: 100%;
-} */
-* {
-    margin: 0;
+.form-group{
+    text-align: left;
 }
-
+.card{
+    padding: 0;
+    margin: 5;
+    text-align: center;
+}
+.btn{
+    align-self: center;
+}
 body {
     transition: .2s background;
     font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
@@ -30,3 +28,4 @@ body {
     color: white;
     height: 100vh;
 }
+

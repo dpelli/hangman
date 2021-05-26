@@ -17,63 +17,69 @@
 
 <body>
     <br><h1>Welcome! Sign in to begin playing our word games!</h1><br>
-    <div id="registrationsection">
-        <div id="registerbanner">
-            <h4>Register</h4>
-        </div>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <form action="register" method="POST">
-            {% csrf_token %}
-            <div class="mb-3">
-                <div class="form-group">
-                    <label class="form-label" for="first_name">First Name:</label>
-                    <input type="text" name="first_name" id="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="last_name">Last Name:</label>
-                    <input type="text" name="last_name" id="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email_address">Email:</label>
-                    <input type="email" name="email_address" id="email_address" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="password">Password:</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="confirm_password">Confirm Password:</label>
-                    <input type="password" name="confirm_password" id="password" class="form-control" required>
-                </div><br>
-                <input type="Submit" class="btn btn-secondary" name="Register" id="register" value="Register">
+    <!-- <div id="registrationsection">
+        <div id="registerbanner"> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Register</h3>            
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <form action="register" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label class="form-label" for="first_name">First Name:</label>
+                            <input type="text" name="first_name" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email_address">Email:</label>
+                            <input type="email" name="email_address" id="email_address" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="confirm_password">Confirm Password:</label>
+                            <input type="password" name="confirm_password" id="password" class="form-control" required>
+                        </div><br>
+                        <input type="Submit" class="btn btn-secondary" name="Register" id="register" value="Register">
+                    </div>
+                </form>
             </div>
-        </form>
+        <!-- </div> -->
+    <!-- <div id="loginsection">
+        <div id="loginbanner"> -->
+        <!-- <div class="row"> -->
+            <div class="col-sm-6">
+                <h3>Login</h3>
+                <form action="login" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="form-label" for="email_address">Email:</label>
+                        <input type="email" name="email_address" id="email_address" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div><br>
+                    <div>
+                        <input type="Submit" class="btn btn-secondary" name="Login" id="login" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div><br><br><br>
-    <div id="loginsection">
-        <div id="loginbanner">
-            <h4>Login</h4>
-        </div>
-        <form action="login" method='POST'>
-            {% csrf_token %}
-            <div class="form-group">
-                <label class="form-label" for="email_address">Email:</label>
-                <input type="email" name="email_address" id="email_address" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="password">Password:</label>
-                <input type="password" name="password" id="password" class="form-control" required>
-            </div><br>
-            <div>
-                <input type="Submit" class="btn btn-secondary" name="Login" id="login" value="Login">
-            </div><br><br><br><br>
-        </form>
-    </div>
     <!-- <style type="text/css">
         body {
             transition: .2s background;
