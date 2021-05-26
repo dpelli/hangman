@@ -26,7 +26,7 @@
     <div class="container">
         <h1>Word Jumble</h1>
         <div class="row">
-            <div class="col">
+            <div class="col-sm-4 offset-sm-4">
                 {% if jumbled_word != "" %}
                     <h2>{{jumbled_word}}</h2>
                 {% else %}
@@ -35,20 +35,23 @@
             </div>
         </div>
         <div class="row">
-            <form action="/guess" method="POST">
-                {% csrf_token %}
-                <div class="col" id="input">
-                    <input type="text" name="guess">
-                </div>
-                <div class="col" id="input">
-                    <input id='append' type="submit" class="btn btn-primary" value="Submit">
-                </div>
-                <p id='secret'>{{answer}}</p>
-            </form>
+            <div class="col-sm-4 offset-sm-4">
+                <form action="/guess" method="POST">
+                    {% csrf_token %}
+                    <div class="col" id="input">
+                        <!-- <input type="text" name="guess"> -->
+                        <input type="text" name="guess" placeholder="Guess">
+                    </div>
+                    <div class="col" id="input">
+                        <input id='append' type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                    <p id='secret'>{{answer}}</p>
+                </form>
+            </div>
         </div>
         <div class="row">
-            <div class="col">
-                <a class="btn btn-success" href="/start">Start</a>
+            <div class="col-sm-4 offset-sm-4">
+                <a class="btn btn-success" href="/start">New Word</a>
             </div>
         </div>
     </div>

@@ -28,4 +28,6 @@ body {
     color: white;
     height: 100vh;
 }
-
+.row{
+    text-align: center;
+}

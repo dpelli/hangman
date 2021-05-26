@@ -36,8 +36,9 @@ def rword(request):
 def word_jumble(request):
     if 'answer' not in request.session:
         request.session['answer'] = ""
-    if 'jumbled_word' not in request.session:
-        request.session['jumbled_word'] = ""
+    # if 'jumbled_word' not in request.session:
+    #     request.session['jumbled_word'] = ""
+    rword(request)
     context = {
         'jumbled_word': request.session['jumbled_word'],
         'answer': request.session['answer']
