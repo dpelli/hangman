@@ -7,8 +7,26 @@ h1{
 }
 h2{
     text-align: center;
-    border-style: solid;
+    /* border-style: solid; */
 }
 #input{
     display: inline;
+}
+/* body {
+    transition: .2s background;
+    background: linear-gradient(135deg, rgb(141, 141, 153) 0%, rgb(155, 66, 83) 100%);
+    color: white;
+    height: 100%;
+} */
+* {
+    margin: 0;
+}
+
+body {
+    transition: .2s background;
+    font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+    background: rgb(255,0,53);
+    background: linear-gradient(135deg, rgba(33,34,176,1) 0%, rgba(255,0,53,1) 100%);
+    color: white;
+    height: 100vh;
 }

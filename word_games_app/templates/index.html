@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
     <title>Reg/Login</title>
 </head>
 <!-- <body>
@@ -52,7 +54,7 @@
                 <input type="Submit" class="btn btn-secondary" name="Register" id="register" value="Register">
             </div>
         </form>
-    </div>
+    </div><br><br><br>
     <div id="loginsection">
         <div id="loginbanner">
             <h4>Login</h4>
@@ -72,13 +74,13 @@
             </div><br><br><br><br>
         </form>
     </div>
-    <style type="text/css">
+    <!-- <style type="text/css">
         body {
             transition: .2s background;
             background: linear-gradient(135deg, rgb(141, 141, 153) 0%, rgb(155, 66, 83) 100%);
             color: white;
             height: 100%;
         }
-    </style>
+    </style> -->
 </body>
 </html>

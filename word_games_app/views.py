@@ -37,7 +37,7 @@ def word_jumble(request):
     if 'answer' not in request.session:
         request.session['answer'] = ""
     if 'jumbled_word' not in request.session:
-        request.session['jumbled_word'] = " "
+        request.session['jumbled_word'] = ""
     context = {
         'jumbled_word': request.session['jumbled_word'],
         'answer': request.session['answer']
@@ -58,7 +58,7 @@ def start(request):
 
 def reset_jumble(request):
     request.session['answer'] = ""
-    request.session['jumbled_word'] = " "
+    request.session['jumbled_word'] = ""
     return redirect("/dashboard")
 
 def reset_hang(request):
