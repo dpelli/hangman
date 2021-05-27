@@ -54,3 +54,9 @@ class User(models.Model):
 
     def __str__(self):
         return '{} {}' .format(self.first_name, self.last_name)
+
+class Word(models.Model):
+    name = models.CharField(max_length=64)
+    length = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
