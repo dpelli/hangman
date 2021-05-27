@@ -55,6 +55,8 @@ def start_jumble(request):
         all_words = Word.objects.filter(length=4)
     elif (request.session['level'] == "2"):
         all_words = Word.objects.filter(length=5)
+    elif (request.session['level'] == "20"):
+        all_words = Word.objects.filter(length=10)
     else:
         all_words = Word.objects.filter(length=6)
 
